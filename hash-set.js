@@ -68,4 +68,8 @@ export default class HashSet {
     const bucket = this.buckets[index];
     return bucket.includes(key);
   }
+
+  length() {
+    return this.count;
+  }
 }

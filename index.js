@@ -66,3 +66,5 @@ console.log(set.delete("Aerith")); // true
 
 console.log(set.has("Tifa")); // true
 console.log(set.has("Aerith")); // false
+
+console.log(set.length()); // 2
