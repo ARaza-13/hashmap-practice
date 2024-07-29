@@ -59,4 +59,7 @@ const set = new HashSet();
 
 set.add("Tifa");
 set.add("Cloud");
+set.add("Aerith");
 console.log(set.buckets);
+
+console.log(set.delete("Aerith"));

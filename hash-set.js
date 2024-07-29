@@ -49,4 +49,17 @@ export default class HashSet {
       this._resize();
     }
   }
+
+  delete(key) {
+    const index = this._hash(key);
+    const bucket = this.buckets[index];
+    const keyIndex = bucket.indexOf(key);
+
+    if (keyIndex !== -1) {
+      bucket.splice(keyIndex, 1);
+      this.count--;
+      return true;
+    }
+    return false;
+  }
 }
