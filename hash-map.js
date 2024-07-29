@@ -20,6 +20,21 @@ export default class HashMap {
     return hashCode;
   }
 
+  _resize() {
+    const oldBuckets = this.buckets;
+    this.size *= 2; // Double the size;
+    this.buckets = Array(this.size)
+      .fill(null)
+      .map(() => []);
+    this.count = 0;
+
+    for (const bucket of oldBuckets) {
+      for (const [key, value] of bucket) {
+        this.set(key, value); // Rehash all entries
+      }
+    }
+  }
+
   set(key, value) {
     const index = this._hash(key);
     const bucket = this.buckets[index];
@@ -29,6 +44,11 @@ export default class HashMap {
       existing[1] = value;
     } else {
       bucket.push([key, value]);
+      this.count++;
+    }
+
+    if (this.count / this.size > this.loadFactor) {
+      this._resize();
     }
   }
 }
