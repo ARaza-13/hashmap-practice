@@ -58,4 +58,10 @@ export default class HashMap {
     const entry = bucket.find(([k]) => k === key);
     return entry ? entry[1] : null;
   }
+
+  has(key) {
+    const index = this._hash(key);
+    const bucket = this.buckets[index];
+    return bucket.some(([k]) => k === key);
+  }
 }

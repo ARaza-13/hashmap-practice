@@ -9,4 +9,8 @@ console.log(hash.get("Cloud"));
 console.log(hash.get("Tifa"));
 console.log(hash.get("Aerith"));
 
+console.log(hash.has("Cloud"));
+console.log(hash.has("Tifa"));
+console.log(hash.has("Aerith"));
+
 console.log(hash.buckets);
