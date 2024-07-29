@@ -88,4 +88,8 @@ export default class HashMap {
       .map(() => []);
     this.count = 0;
   }
+
+  keys() {
+    return this.buckets.flat().map(([key]) => key);
+  }
 }
