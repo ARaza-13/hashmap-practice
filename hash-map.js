@@ -96,4 +96,8 @@ export default class HashMap {
   values() {
     return this.buckets.flat().map(([, value]) => value);
   }
+
+  entries() {
+    return this.buckets.flat();
+  }
 }
