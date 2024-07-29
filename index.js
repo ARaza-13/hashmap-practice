@@ -1,41 +1,62 @@
 import HashMap from "./hash-map.js";
+import HashSet from "./hash-set.js";
 
-const hash = new HashMap();
+// TESTING FOR HASHMAP
+console.log(
+  "\n",
+  "--------------------HASHMAP TESTING--------------------",
+  "\n",
+);
 
-hash.set("Tifa", "LOCKHART");
-console.log(hash.get("Tifa")); // LOCKHART
+const map = new HashMap();
 
-hash.set("Tifa", "Lockhart");
-console.log(hash.get("Tifa")); // Lockhart
+map.set("Tifa", "LOCKHART");
+console.log(map.get("Tifa")); // LOCKHART
 
-hash.clear();
-console.log(hash.entries()); // []
+map.set("Tifa", "Lockhart");
+console.log(map.get("Tifa")); // Lockhart
 
-console.log(hash.get("Tifa")); // null
-console.log(hash.has("Tifa")); // false
-console.log(hash.remove("Tifa")); // false
+map.clear();
+console.log(map.entries()); // []
 
-hash.set("Cloud", "Strife");
-hash.set("Tifa", "Lockhart");
+console.log(map.get("Tifa")); // null
+console.log(map.has("Tifa")); // false
+console.log(map.remove("Tifa")); // false
 
-console.log(hash.get("Cloud")); // Strife
-console.log(hash.get("Tifa")); // Lockart
+map.set("Cloud", "Strife");
+map.set("Tifa", "Lockhart");
 
-console.log(hash.has("Cloud")); // true
-console.log(hash.has("Tifa")); // true
+console.log(map.get("Cloud")); // Strife
+console.log(map.get("Tifa")); // Lockart
 
-hash.set("Aerith", "Gainsborough");
-console.log(hash.get("Aerith")); // Gainsborough
-console.log(hash.has("Aerith")); // true
-console.log(hash.keys()); // ['Tifa', 'Cloud', 'Aerith']
-console.log(hash.values()); // ['Lockhart', 'Strife', 'Gainsborough']
-console.log(hash.entries()); // [['Tifa', 'Lockhart'], ['Cloud', 'Strife'], ['Aerith', 'Gainsborough']]
+console.log(map.has("Cloud")); // true
+console.log(map.has("Tifa")); // true
 
-console.log(hash.remove("Aerith")); // true
-console.log(hash.get("Aerith")); // null
-console.log(hash.has("Aerith")); // false
+map.set("Aerith", "Gainsborough");
+console.log(map.get("Aerith")); // Gainsborough
+console.log(map.has("Aerith")); // true
+console.log(map.keys()); // ['Tifa', 'Cloud', 'Aerith']
+console.log(map.values()); // ['Lockhart', 'Strife', 'Gainsborough']
+console.log(map.entries()); // [['Tifa', 'Lockhart'], ['Cloud', 'Strife'], ['Aerith', 'Gainsborough']]
 
-console.log(hash.length()); // 2
-console.log(hash.keys()); // ['Tifa', 'Cloud']
-console.log(hash.values()); // ['Lockhart', 'Strife']
-console.log(hash.entries()); // [['Tifa', 'Lockhart'], ['Cloud', 'Strife']]
+console.log(map.remove("Aerith")); // true
+console.log(map.get("Aerith")); // null
+console.log(map.has("Aerith")); // false
+
+console.log(map.length()); // 2
+console.log(map.keys()); // ['Tifa', 'Cloud']
+console.log(map.values()); // ['Lockhart', 'Strife']
+console.log(map.entries()); // [['Tifa', 'Lockhart'], ['Cloud', 'Strife']]
+
+// TESTING FOR HASHSET
+console.log(
+  "\n",
+  "--------------------HASHSET TESTING--------------------",
+  "\n",
+);
+
+const set = new HashSet();
+
+set.add("Tifa");
+set.add("Cloud");
+console.log(set.buckets);

@@ -19,4 +19,34 @@ export default class HashSet {
 
     return hashCode;
   }
+
+  _resize() {
+    const oldBuckets = this.buckets;
+    this.size *= 2; // Double the size
+    this.buckets = Array(this.size)
+      .fill(null)
+      .map(() => []);
+    this.count = 0;
+
+    for (const bucket of oldBuckets) {
+      for (const key of bucket) {
+        this.add(key); // Rehash all entries
+      }
+    }
+  }
+
+  add(key) {
+    const index = this._hash(key);
+    const bucket = this.buckets[index];
+    const existing = bucket.includes(key);
+
+    if (!existing) {
+      bucket.push(key);
+      this.count++;
+    }
+
+    if (this.count / this.size > this.loadFactor) {
+      this._resize();
+    }
+  }
 }
