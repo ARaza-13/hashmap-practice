@@ -17,6 +17,11 @@ hash.set("Aerith", "Gainsborough");
 console.log(hash.get("Aerith"));
 console.log(hash.has("Aerith"));
 
-console.log(hash.remove("Aerith"));
+console.log(hash.length());
 
+console.log(hash.remove("Aerith"));
+console.log(hash.get("Aerith"));
+console.log(hash.has("Aerith"));
+
+console.log(hash.length());
 console.log(hash.buckets);
