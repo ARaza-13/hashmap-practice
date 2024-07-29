@@ -19,4 +19,16 @@ export default class HashMap {
 
     return hashCode;
   }
+
+  set(key, value) {
+    const index = this._hash(key);
+    const bucket = this.buckets[index];
+    const existing = bucket.find(([k]) => k === key);
+
+    if (existing) {
+      existing[1] = value;
+    } else {
+      bucket.push([key, value]);
+    }
+  }
 }

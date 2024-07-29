@@ -2,5 +2,9 @@ import HashMap from "./hash-map.js";
 
 const hash = new HashMap();
 
-console.log(hash._hash("Tifa"));
-console.log(hash._hash("Cloud"));
+hash.set("Tifa", "Lockhart");
+hash.set("TIFA", "LOCKHART");
+hash.set("Cloud", "Strife");
+hash.set("CLOUD", "STRIFE");
+
+console.log(hash.buckets);
