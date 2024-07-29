@@ -58,13 +58,18 @@ console.log(
 const set = new HashSet();
 
 set.add("Tifa");
+console.log(set.has("Tifa")); // true
+
+set.clear();
+console.log(set.has("Tifa")); // false
+
+set.add("Tifa");
 set.add("Cloud");
 set.add("Aerith");
-console.log(set.buckets);
+console.log(set.keys()); // ['Tifa', 'Cloud', 'Aerith']
 
 console.log(set.delete("Aerith")); // true
-
-console.log(set.has("Tifa")); // true
 console.log(set.has("Aerith")); // false
 
 console.log(set.length()); // 2
+console.log(set.keys()); // ['Tifa', 'Cloud']

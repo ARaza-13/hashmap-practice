@@ -72,4 +72,15 @@ export default class HashSet {
   length() {
     return this.count;
   }
+
+  clear() {
+    this.buckets = Array(this.size)
+      .fill(null)
+      .map(() => []);
+    this.count = 0;
+  }
+
+  keys() {
+    return this.buckets.flat();
+  }
 }
