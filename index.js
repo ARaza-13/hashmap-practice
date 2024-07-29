@@ -34,4 +34,5 @@ console.log(hash.has("Aerith")); // false
 
 console.log(hash.length()); // 2
 console.log(hash.keys()); // ['Tifa', 'Cloud']
+console.log(hash.values()); // ['Lockhart', 'Strife']
 console.log(hash.buckets);
