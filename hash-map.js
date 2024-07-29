@@ -22,7 +22,7 @@ export default class HashMap {
 
   _resize() {
     const oldBuckets = this.buckets;
-    this.size *= 2; // Double the size;
+    this.size *= 2; // Double the size
     this.buckets = Array(this.size)
       .fill(null)
       .map(() => []);
@@ -50,5 +50,12 @@ export default class HashMap {
     if (this.count / this.size > this.loadFactor) {
       this._resize();
     }
+  }
+
+  get(key) {
+    const index = this._hash(key);
+    const bucket = this.buckets[index];
+    const entry = bucket.find(([k]) => k === key);
+    return entry ? entry[1] : null;
   }
 }
