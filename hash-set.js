@@ -62,4 +62,10 @@ export default class HashSet {
     }
     return false;
   }
+
+  has(key) {
+    const index = this._hash(key);
+    const bucket = this.buckets[index];
+    return bucket.includes(key);
+  }
 }

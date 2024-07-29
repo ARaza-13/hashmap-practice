@@ -62,4 +62,7 @@ set.add("Cloud");
 set.add("Aerith");
 console.log(set.buckets);
 
-console.log(set.delete("Aerith"));
+console.log(set.delete("Aerith")); // true
+
+console.log(set.has("Tifa")); // true
+console.log(set.has("Aerith")); // false
